@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.sixD.leaderboard.ui.main.model.AiDataModel" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardElevation="0dp"
+        app:shapeAppearanceOverlay="@style/CircleImage"
+        app:strokeColor="#66FFFFFF"
+        app:strokeWidth="@dimen/_2sdp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Circular Image -->
+            <ImageView
+                android:id="@+id/avatarImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@{model.name}"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{model.poster}" />
+
+            <!-- Opacity Overlay -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#334C6EDB" />
+
+        </FrameLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

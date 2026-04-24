@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AI LeaderBoard</string>
+    <string name="leaderboard">LEADERBOARD</string>
+    <string name="avatar">Avatar</string>
+    <string name="crown">Crown</string>
+    <string name="close_icon">Close Icon</string>
+</resources>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.sixD.leaderboard.ui.main.model.AiDataModel" />
+
+        <variable
+            name="isFirst"
+            type="boolean" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="@{model != null ? View.VISIBLE : View.GONE}">
+
+        <!-- 👑 Crown -->
+        <ImageView
+            android:id="@+id/crown"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="4dp"
+            android:contentDescription="@string/crown"
+            android:src="@drawable/ic_crown"
+            android:visibility="@{isFirst ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toTopOf="@id/first_poster"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/first_poster"
+            layout="@layout/circular_image"
+            android:layout_width="@dimen/_64sdp"
+            android:layout_height="0dp"
+            app:model="@{model}"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:visibility="@{isFirst ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toTopOf="@id/rank"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearanceOverlay="@style/CircleImage" />
+
+        <include
+            android:id="@+id/second_poster"
+            layout="@layout/circular_image"
+            android:layout_width="@dimen/_56sdp"
+            android:layout_height="0dp"
+            app:model="@{model}"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:visibility="@{isFirst ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toTopOf="@id/rank"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearanceOverlay="@style/CircleImage" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/rank"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            app:cardBackgroundColor="@color/ranking_background"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:layout_constraintBottom_toTopOf="@id/name"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/first_poster"
+            app:layout_constraintStart_toStartOf="@id/first_poster">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:maxLength="2"
+                android:text="@{model.rank}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                tools:text="1" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:gravity="center"
+            android:text="@{model.name}"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toTopOf="@id/company"
+            app:layout_constraintEnd_toEndOf="@id/first_poster"
+            app:layout_constraintStart_toStartOf="@id/first_poster"
+            tools:text="Chat GPT" />
+
+        <TextView
+            android:id="@+id/company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:gravity="center"
+            android:text="@{model.company}"
+            android:textColor="@color/text_light_gray"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintBottom_toTopOf="@id/rating"
+            app:layout_constraintEnd_toEndOf="@id/rank"
+            app:layout_constraintStart_toStartOf="@id/rank"
+            tools:text="Open AI" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.rating}"
+            android:textColor="@color/rating_text_blue"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/rank"
+            app:layout_constraintStart_toStartOf="@id/rank"
+            tools:text="9.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

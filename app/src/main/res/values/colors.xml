@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Legacy Colors -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- App Background -->
+    <color name="background_color">#1E2A78</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary_dark">#1E2A78</color>
+    <color name="text_light_gray">#B3B3B3</color>
+
+    <!-- Badge & Rating Colors -->
+    <color name="rating_text_blue">#5BA9D1</color>
+
+    <!-- Ranking Section Colors -->
+    <color name="ranking_background">#5BA9D1</color>
+
+    <!-- Dividers & Separators -->
+    <color name="divider_light_gray">#F0F0F0</color>
+</resources>

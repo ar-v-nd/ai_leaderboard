@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="item1"
+            type="com.sixD.leaderboard.ui.main.model.AiDataModel" />
+        <variable
+            name="item2"
+            type="com.sixD.leaderboard.ui.main.model.AiDataModel" />
+        <variable
+            name="item3"
+            type="com.sixD.leaderboard.ui.main.model.AiDataModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/first_place"
+            layout="@layout/item_top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:isFirst="@{true}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.3"
+            app:model="@{item1}" />
+
+        <include
+            android:id="@+id/second_place"
+            layout="@layout/item_top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:isFirst="@{false}"
+            app:layout_constraintBottom_toBottomOf="@id/first_place"
+            app:layout_constraintEnd_toStartOf="@id/first_place"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/first_place"
+            app:layout_constraintWidth_percent="0.3"
+            app:model="@{item2}" />
+
+        <include
+            android:id="@+id/third_place"
+            layout="@layout/item_top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:isFirst="@{false}"
+            app:layout_constraintBottom_toBottomOf="@id/first_place"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/first_place"
+            app:layout_constraintTop_toBottomOf="@id/first_place"
+            app:layout_constraintWidth_percent="0.3"
+            app:model="@{item3}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

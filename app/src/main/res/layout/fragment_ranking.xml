@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.sixD.leaderboard.viewmodel.MainViewModel" />
+
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:isRefreshing="@{vm.isRefreshing}"
+        app:onRefresh="@{() -> vm.loadData()}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_color"
+            android:fitsSystemWindows="true">
+
+            <TextView
+                android:id="@+id/leader_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="@string/leaderboard"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/icon_close"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="0dp"
+                android:background="@drawable/opacity_round_background"
+                android:padding="@dimen/_4sdp"
+                android:contentDescription="@string/close_icon"
+                android:src="@drawable/ic_close"
+                app:layout_constraintBottom_toBottomOf="@id/leader_label"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="@id/recyclerView"
+                app:layout_constraintTop_toBottomOf="@id/leader_label" />
+
+            <include
+                android:id="@+id/top3_container"
+                layout="@layout/item_top_layer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:item1="@{vm.getData(0)}"
+                app:item2="@{vm.getData(1)}"
+                app:item3="@{vm.getData(2)}"
+                app:layout_constraintEnd_toEndOf="@id/recyclerView"
+                app:layout_constraintStart_toStartOf="@id/recyclerView"
+                app:layout_constraintTop_toBottomOf="@+id/icon_close" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_16sdp"
+                android:background="@drawable/white_corner_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/top3_container"
+                app:layout_constraintVertical_bias="0"
+                android:overScrollMode="never"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_leaderboard" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>
