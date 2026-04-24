@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="@{isFirstItem ? @dimen/_16sdp : @dimen/_8sdp}"
         android:paddingBottom="@{isLastItem ? @dimen/_16sdp : @dimen/zero_spacing}"
-        android:paddingEnd="@dimen/_16sdp">
+        android:paddingHorizontal="@dimen/_16sdp">
 
         <TextView
             android:id="@+id/rank"
@@ -106,7 +106,7 @@
             android:background="@color/divider_light_gray"
             android:visibility="@{isLastItem ? View.GONE : View.VISIBLE}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/name"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/avatar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

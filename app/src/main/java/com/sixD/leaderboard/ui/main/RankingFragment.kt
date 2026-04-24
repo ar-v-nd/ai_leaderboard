@@ -69,11 +69,11 @@ class RankingFragment : Fragment() {
     private fun setUpUI() {
         adapter = LeaderBoardAdapter()
         binding.apply {
-            FragmentRankingBinding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            FragmentRankingBinding.recyclerView.adapter = adapter
-            FragmentRankingBinding.recyclerView.setHasFixedSize(true)
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            recyclerView.adapter = adapter
+            recyclerView.setHasFixedSize(true)
 
-            FragmentRankingBinding.iconClose.setOnClickListener {
+            iconClose.setOnClickListener {
                 requireActivity().finish()
             }
         }
