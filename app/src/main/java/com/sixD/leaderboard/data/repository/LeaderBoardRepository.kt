@@ -3,7 +3,7 @@ package com.sixD.leaderboard.data.repository
 import android.util.Log
 import com.sixD.leaderboard.data.api.RetrofitClient
 import com.sixD.leaderboard.data.mapper.LeaderBoardMapper
-import com.sixD.leaderboard.ui.main.model.AiDataModel
+import com.sixD.leaderboard.ui.common.model.AiDataModel
 
 /**
  * Repository class responsible for fetching leaderboard data from the remote API.

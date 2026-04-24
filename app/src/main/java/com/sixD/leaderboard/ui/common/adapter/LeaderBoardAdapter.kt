@@ -1,11 +1,11 @@
-package com.sixD.leaderboard.ui.main.adapter
+package com.sixD.leaderboard.ui.common.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.sixD.leaderboard.databinding.ItemLeaderboardBinding
-import com.sixD.leaderboard.ui.main.model.AiDataModel
+import com.sixD.leaderboard.ui.common.model.AiDataModel
 
 /**
  * [RecyclerView.Adapter] for the leaderboard list.

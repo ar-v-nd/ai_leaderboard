@@ -1,4 +1,4 @@
-package com.sixD.leaderboard.viewmodel
+package com.sixD.leaderboard.ui.main
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sixD.leaderboard.data.repository.LeaderBoardRepository
-import com.sixD.leaderboard.ui.main.model.AiDataModel
+import com.sixD.leaderboard.ui.common.model.AiDataModel
 import kotlinx.coroutines.launch
 import java.io.IOException
 

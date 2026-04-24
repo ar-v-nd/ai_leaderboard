@@ -1,4 +1,4 @@
-package com.sixD.leaderboard.ui.main.model
+package com.sixD.leaderboard.ui.common.model
 
 /**
  * Data model representing an AI entry in the leaderboard.

@@ -21,7 +21,7 @@
     <!-- Ranking Fragment -->
     <fragment
         android:id="@+id/rankingFragment"
-        android:name="com.sixD.leaderboard.ui.ranking.RankingFragment"
+        android:name="com.sixD.leaderboard.ui.main.RankingFragment"
         android:label="Ranking"
         tools:layout="@layout/fragment_ranking" />
 

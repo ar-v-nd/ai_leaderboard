@@ -1,7 +1,7 @@
-package com.sixD.leaderboard.ui.main.adapter
+package com.sixD.leaderboard.ui.common.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.sixD.leaderboard.ui.main.model.AiDataModel
+import com.sixD.leaderboard.ui.common.model.AiDataModel
 
 /**
  * [DiffUtil.ItemCallback] implementation for [AiDataModel].

@@ -1,10 +1,10 @@
-package com.sixD.leaderboard.viewModel
+package com.sixD.leaderboard.presentation.main
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.sixD.leaderboard.data.repository.LeaderBoardRepository
-import com.sixD.leaderboard.viewmodel.MainViewModel
-import com.sixD.leaderboard.ui.main.model.AiDataModel
+import com.sixD.leaderboard.ui.main.MainViewModel
+import com.sixD.leaderboard.ui.common.model.AiDataModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.*

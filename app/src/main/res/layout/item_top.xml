@@ -9,7 +9,7 @@
 
         <variable
             name="model"
-            type="com.sixD.leaderboard.ui.main.model.AiDataModel" />
+            type="com.sixD.leaderboard.ui.common.model.AiDataModel" />
 
         <variable
             name="isFirst"

@@ -1,7 +1,7 @@
 package com.sixD.leaderboard.data.mapper
 
 import com.sixD.leaderboard.data.model.LeaderBoardItem
-import com.sixD.leaderboard.ui.main.model.AiDataModel
+import com.sixD.leaderboard.ui.common.model.AiDataModel
 
 /**
  * Mapper object to convert API response models to domain-level data models.

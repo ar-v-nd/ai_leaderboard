@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.sixD.leaderboard.viewmodel.MainViewModel" />
+            type="com.sixD.leaderboard.ui.main.MainViewModel" />
 
     </data>
 

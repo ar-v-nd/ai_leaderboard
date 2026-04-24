@@ -1,4 +1,4 @@
-package com.sixD.leaderboard.ui.ranking
+package com.sixD.leaderboard.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,9 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sixD.leaderboard.databinding.FragmentRankingBinding
-import com.sixD.leaderboard.ui.main.adapter.LeaderBoardAdapter
+import com.sixD.leaderboard.ui.common.adapter.LeaderBoardAdapter
 import com.sixD.leaderboard.util.DialogUtils
-import com.sixD.leaderboard.viewmodel.MainViewModel
 
 /**
  * A [Fragment] that displays the leaderboard ranking.
@@ -70,11 +69,11 @@ class RankingFragment : Fragment() {
     private fun setUpUI() {
         adapter = LeaderBoardAdapter()
         binding.apply {
-            recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            recyclerView.adapter = adapter
-            recyclerView.setHasFixedSize(true)
+            FragmentRankingBinding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            FragmentRankingBinding.recyclerView.adapter = adapter
+            FragmentRankingBinding.recyclerView.setHasFixedSize(true)
 
-            iconClose.setOnClickListener {
+            FragmentRankingBinding.iconClose.setOnClickListener {
                 requireActivity().finish()
             }
         }

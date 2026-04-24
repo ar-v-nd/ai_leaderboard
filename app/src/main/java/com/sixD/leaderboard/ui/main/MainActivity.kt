@@ -1,16 +1,13 @@
-package com.sixD.leaderboard.ui
+package com.sixD.leaderboard.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.sixD.leaderboard.R
 import com.sixD.leaderboard.databinding.ActivityMainBinding
-import com.sixD.leaderboard.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 

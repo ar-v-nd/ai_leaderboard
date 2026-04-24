@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.sixD.leaderboard.R
 import com.sixD.leaderboard.databinding.FragmentSplashBinding
 import com.sixD.leaderboard.util.DialogUtils
-import com.sixD.leaderboard.viewmodel.MainViewModel
+import com.sixD.leaderboard.ui.main.MainViewModel
 
 /**
  * A [Fragment] representing the splash screen of the application.

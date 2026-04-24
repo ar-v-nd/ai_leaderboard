@@ -5,13 +5,13 @@
     <data>
         <variable
             name="item1"
-            type="com.sixD.leaderboard.ui.main.model.AiDataModel" />
+            type="com.sixD.leaderboard.ui.common.model.AiDataModel" />
         <variable
             name="item2"
-            type="com.sixD.leaderboard.ui.main.model.AiDataModel" />
+            type="com.sixD.leaderboard.ui.common.model.AiDataModel" />
         <variable
             name="item3"
-            type="com.sixD.leaderboard.ui.main.model.AiDataModel" />
+            type="com.sixD.leaderboard.ui.common.model.AiDataModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

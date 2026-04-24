@@ -7,7 +7,7 @@
         <import type="android.view.View" />
         <variable
             name="model"
-            type="com.sixD.leaderboard.ui.main.model.AiDataModel" />
+            type="com.sixD.leaderboard.ui.common.model.AiDataModel" />
         <variable
             name="isLastItem"
             type="boolean" />

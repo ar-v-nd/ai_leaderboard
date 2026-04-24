@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LeaderBoard">
         <activity
-            android:name="com.sixD.leaderboard.ui.MainActivity"
+            android:name="com.sixD.leaderboard.ui.main.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.LeaderBoard">
             <intent-filter>
