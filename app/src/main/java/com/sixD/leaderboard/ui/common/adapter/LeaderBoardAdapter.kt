@@ -11,7 +11,9 @@ import com.sixD.leaderboard.ui.common.model.AiDataModel
  * [RecyclerView.Adapter] for the leaderboard list.
  * Uses [ListAdapter] with [RankingDiffUtil] for efficient list updates.
  */
-class LeaderBoardAdapter : ListAdapter<AiDataModel, LeaderBoardAdapter.LeaderBoardViewHolder>(
+class LeaderBoardAdapter(
+    private val onItemClick: (AiDataModel) -> Unit
+) : ListAdapter<AiDataModel, LeaderBoardAdapter.LeaderBoardViewHolder>(
     RankingDiffUtil()
 ) {
 
@@ -32,13 +34,16 @@ class LeaderBoardAdapter : ListAdapter<AiDataModel, LeaderBoardAdapter.LeaderBoa
         position: Int
     ) {
         holder.bind(getItem(position), position, itemCount)
+        holder.itemView.setOnClickListener {
+            onItemClick(getItem(position))
+        }
     }
 
     /**
      * ViewHolder class for leaderboard items.
      * Handles data binding and conditional padding/visibility based on item position.
      */
-    inner class LeaderBoardViewHolder(
+    class LeaderBoardViewHolder(
         private val binding: ItemLeaderboardBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         /**
@@ -53,5 +58,6 @@ class LeaderBoardAdapter : ListAdapter<AiDataModel, LeaderBoardAdapter.LeaderBoa
             binding.isLastItem = (position == totalCount - 1)
             binding.executePendingBindings()
         }
+
     }
 }

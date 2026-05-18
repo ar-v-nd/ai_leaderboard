@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.sixD.leaderboard.R
 import com.sixD.leaderboard.databinding.FragmentRankingBinding
 import com.sixD.leaderboard.ui.common.adapter.LeaderBoardAdapter
 import com.sixD.leaderboard.util.DialogUtils
@@ -67,7 +69,11 @@ class RankingFragment : Fragment() {
      * Initializes the RecyclerView adapter, layout manager, and click listeners.
      */
     private fun setUpUI() {
-        adapter = LeaderBoardAdapter()
+        adapter = LeaderBoardAdapter(
+            onItemClick = {
+                viewModel.onItemClick(it)
+            }
+        )
         binding.apply {
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
             recyclerView.adapter = adapter
@@ -129,6 +135,32 @@ class RankingFragment : Fragment() {
                     }
                 }
                 viewModel.clearError() // Reset error state after showing dialog
+            }
+        }
+
+        viewModel.onItemClick.observe(viewLifecycleOwner) { aiDataModel ->
+            if (aiDataModel != null) {
+                /*findNavController().navigate(
+                    R.id.detailFragment, Bundle().apply {
+                        putString("name", aiDataModel.name)
+                        putString("rank", aiDataModel.rank)
+                        putString("image", aiDataModel.poster)
+                        putString("category", aiDataModel.category)
+                        putString("company", aiDataModel.company)
+                        putString("description", aiDataModel.description)
+                        putString("modelID", aiDataModel.modelID)
+                        putString("rating", aiDataModel.rating)
+                        putString("released", aiDataModel.released)
+
+                    }
+                )*/
+
+                findNavController().navigate(
+                    R.id.detailFragment, Bundle().apply {
+                        putSerializable("data", aiDataModel)
+                    })
+
+                viewModel.clearOnItemClick()
             }
         }
     }

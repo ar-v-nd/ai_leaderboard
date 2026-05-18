@@ -59,6 +59,7 @@
                 app:item1="@{vm.getData(0)}"
                 app:item2="@{vm.getData(1)}"
                 app:item3="@{vm.getData(2)}"
+                app:vm="@{vm}"
                 app:layout_constraintEnd_toEndOf="@id/recyclerView"
                 app:layout_constraintStart_toStartOf="@id/recyclerView"
                 app:layout_constraintTop_toBottomOf="@+id/icon_close" />

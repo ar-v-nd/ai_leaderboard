@@ -4,4 +4,6 @@
     <string name="avatar">Avatar</string>
     <string name="crown">Crown</string>
     <string name="close_icon">Close Icon</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

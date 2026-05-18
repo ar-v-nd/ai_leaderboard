@@ -12,6 +12,10 @@
         <variable
             name="item3"
             type="com.sixD.leaderboard.ui.common.model.AiDataModel" />
+
+        <variable
+            name="vm"
+            type="com.sixD.leaderboard.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,6 +28,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:isFirst="@{true}"
+            android:onClick="@{() -> vm.onItemClick(item1)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -36,6 +41,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:isFirst="@{false}"
+            android:onClick="@{() -> vm.onItemClick(item2)}"
             app:layout_constraintBottom_toBottomOf="@id/first_place"
             app:layout_constraintEnd_toStartOf="@id/first_place"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +55,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:isFirst="@{false}"
+            android:onClick="@{() -> vm.onItemClick(item3)}"
             app:layout_constraintBottom_toBottomOf="@id/first_place"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/first_place"

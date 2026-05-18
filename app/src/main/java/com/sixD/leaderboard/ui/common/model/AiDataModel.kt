@@ -1,5 +1,7 @@
 package com.sixD.leaderboard.ui.common.model
 
+import java.io.Serializable
+
 /**
  * Data model representing an AI entry in the leaderboard.
  *
@@ -13,14 +15,16 @@ package com.sixD.leaderboard.ui.common.model
  * @property released The release date or status of the model.
  * @property rank The numerical rank of the model in the leaderboard.
  */
+
+
 data class AiDataModel(
-    val category: String = "",
-    val company: String = "",
-    val description: String = "",
-    val modelID: String = "",
-    val name: String = "",
-    val poster: String = "",
-    val rating: String = "",
-    val released: String = "",
-    val rank: String = ""
-)
+     val category: String = "",
+     val company: String = "",
+     val description: String = "",
+     val modelID: String = "",
+     val name: String = "",
+     val poster: String = "",
+     val rating: String = "",
+     val released: String = "",
+     val rank: String = ""
+) : Serializable

@@ -31,6 +31,9 @@ class MainViewModel : ViewModel() {
     private val _error = MutableLiveData<ErrorType?>()
     val error: LiveData<ErrorType?> = _error
 
+    private val _onItemClick = MutableLiveData<AiDataModel?>()
+    val onItemClick: LiveData<AiDataModel?> = _onItemClick
+
     /**
      * Fetches leaderboard data from the repository.
      * Updates [data], [isRefreshing], and [error] LiveData based on the result.
@@ -73,6 +76,14 @@ class MainViewModel : ViewModel() {
      */
     fun clearError() {
         _error.value = null
+    }
+
+    fun onItemClick(item: AiDataModel?) {
+        _onItemClick.value = item
+    }
+
+    fun clearOnItemClick() {
+        _onItemClick.value = null
     }
 
     /**

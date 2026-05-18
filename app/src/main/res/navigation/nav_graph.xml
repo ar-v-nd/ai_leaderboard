@@ -23,6 +23,22 @@
         android:id="@+id/rankingFragment"
         android:name="com.sixD.leaderboard.ui.main.RankingFragment"
         android:label="Ranking"
-        tools:layout="@layout/fragment_ranking" />
+        tools:layout="@layout/fragment_ranking">
+
+        <argument
+            android:name="data"
+            app:argType="com.sixD.leaderboard.ui.common.model.AiDataModel" />
+        <action
+            android:id="@+id/action_rankingFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.sixD.leaderboard.ui.details.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+
 
 </navigation>

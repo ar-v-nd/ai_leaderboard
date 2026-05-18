@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     kotlin("plugin.serialization") version "1.9.22"
+//    id("org.jetbrains.kotlin.parcelize")
 }
 
 android {
